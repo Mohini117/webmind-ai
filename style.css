@@ -1,0 +1,36 @@
+/* General Body Styling */
+body {
+    background-color: #0E1117;
+    color: white;
+}
+
+/* Input Box Styling */
+.stTextInput>div>div>input {
+    background-color: #161B22;
+    color: white;
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px solid #30363D;
+}
+
+/* Button Styling */
+.stButton>button {
+    background: linear-gradient(90deg, #f663a0, #ff758c);
+    color: white;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: bold;
+    border: none;
+}
+
+.stButton>button:hover {
+    background: linear-gradient(90deg, #f94de2, #dcbdca);
+    transition: 0.3s ease-in-out;
+}
+
+/* Label Styling */
+.stTextInput>label, .stButton>label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ff758c;
+}
