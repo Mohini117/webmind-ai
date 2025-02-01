@@ -54,7 +54,7 @@ if scrape_clicked:
         st.warning(error_msg)
     else:
         if "vector" not in st.session_state:
-            st.session_state.embeddings = OllamaEmbeddings(model="deepseek-r1:1.5b")
+            st.session_state.embeddings = OllamaEmbeddings(model="Llama3-8b-8192")
             st.session_state.loader = WebBaseLoader(valid_url)
             st.session_state.docs = st.session_state.loader.load()
 
