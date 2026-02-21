@@ -5,11 +5,13 @@ import time
 from dotenv import load_dotenv
 from langchain_groq import ChatGroq
 from langchain_community.document_loaders import WebBaseLoader
-from langchain.embeddings import OllamaEmbeddings
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.chains.combine_documents import create_stuff_documents_chain
+from langchain_ollama import OllamaEmbeddings
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_classic.chains.combine_documents import create_stuff_documents_chain
+# from langchain_community.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate
-from langchain.chains import create_retrieval_chain
+from langchain_classic.chains.retrieval import create_retrieval_chain
+from langchain_community.llms import Ollama
 from langchain_community.vectorstores import FAISS
 
 # Load environment variables
@@ -54,7 +56,7 @@ if scrape_clicked:
         st.warning(error_msg)
     else:
         if "vector" not in st.session_state:
-            st.session_state.embeddings = OllamaEmbeddings(model="deepseek-r1:1.5b")
+            st.session_state.embeddings = OllamaEmbeddings(model="nomic-embed-text:latest")
             st.session_state.loader = WebBaseLoader(valid_url)
             st.session_state.docs = st.session_state.loader.load()
 
@@ -66,7 +68,7 @@ if scrape_clicked:
 
 # Check if scraping has been performed before allowing user prompts
 if "vectors" in st.session_state:
-    llm = ChatGroq(groq_api_key=groq_api_key, model_name="Llama3-8b-8192")
+    llm = ChatGroq(groq_api_key=groq_api_key, model_name="llama-3.1-8b-instant")
 
     prompt_template = ChatPromptTemplate.from_template(
         """
