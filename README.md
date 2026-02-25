@@ -1,6 +1,12 @@
 # 📌 WebMind AI <br>
 WebMind AI is a web scraping and AI-powered question-answering system built using Streamlit, LangChain, FAISS, and Groq's Llama3-8b-8192 model. It allows users to extract and analyze website content, providing intelligent answers based on retrieved information.
 
+# Demo video :
+
+
+https://github.com/user-attachments/assets/66459a44-2cdf-4c93-929b-aa0bb4533706
+
+
 # 🚀 Features  <br>
 ✅ Web Scraping – Extracts text from any given website URL.<br>
 ✅ AI-Powered Answers – Uses Llama3-8b-8192 for answering questions based on website data.<br>
